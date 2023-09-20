@@ -25,7 +25,7 @@ association_table = Table("place_amenity", Base.metadata,
 
 
 class Place(BaseModel, Base):
-    """Represents a Place for a MySQL database.
+    """Represents a Place for a MySQL database"""
 
     Inherits from SQLAlchemy Base and links to the MySQL table places.
 
@@ -44,7 +44,7 @@ class Place(BaseModel, Base):
         reviews (sqlalchemy relationship): The Place-Review relationship.
         amenities (sqlalchemy relationship): The Place-Amenity relationship.
         amenity_ids (list): An id list of all linked amenities.
-    """
+
     __tablename__ = "places"
     city_id = Column(String(60), ForeignKey("cities.id"), nullable=False)
     user_id = Column(String(60), ForeignKey("users.id"), nullable=False)
@@ -84,4 +84,3 @@ class Place(BaseModel, Base):
         def amenities(self, value):
             if type(value) == Amenity:
                 self.amenity_ids.append(value.id)
->>>>>>> 1dc9e1831783262e7531c19ff8ccb78d62991cc3
