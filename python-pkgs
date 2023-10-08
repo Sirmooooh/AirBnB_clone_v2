@@ -1,0 +1,24 @@
+# Uninstall Fabric if it's already installed
+pip3 uninstall Fabric
+
+# Install required system dependencies
+sudo apt-get install libffi-dev libssl-dev build-essential python3.4-dev libpython3-dev
+
+# Create and activate a virtual environment (optional but recommended)
+# This step helps isolate your project's dependencies.
+# You can skip this if you prefer to install packages system-wide.
+python3 -m venv myenv
+source myenv/bin/activate
+
+# Upgrade pip to the latest version (optional but recommended)
+pip install --upgrade pip
+
+# Install Python packages with specific versions
+pip install pyparsing
+pip install appdirs
+pip install setuptools==40.1.0
+pip install cryptography==2.8
+pip install bcrypt==3.1.7
+pip install PyNaCl==1.3.0
+pip install Fabric3==1.14.post1  # Note: Fabric3 is a Python 2.x compatibility layer, consider using Fabric2 for Python 3.x projects.
+
